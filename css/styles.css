@@ -1,0 +1,154 @@
+:root {
+  --tz-green: #1eb954;
+  --tz-blue: #00a3e0;
+  --tz-yellow: #fcd116;
+  --bg-gray: #f4f6f9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+
+body { background: var(--bg-gray); color: #333; }
+
+.app-header {
+  background: linear-gradient(135deg, #0f382c 0%, #17523d 100%);
+  color: #fff; padding: 20px; border-bottom: 5px solid var(--tz-yellow);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.header-banner {
+  display: flex; align-items: center; gap: 15px;
+  max-width: 1100px; margin: 0 auto;
+}
+
+.logo { height: 50px; width: auto; }
+
+.title-container h1 { font-size: 1.3rem; color: #fff; margin-bottom: 4px; }
+.title-container p { font-size: 0.85rem; color: var(--tz-yellow); }
+
+.config-section { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+
+.config-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;
+  background: #fff; padding: 20px; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.span-2 { grid-column: span 2; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.85rem; font-weight: bold; color: #444; }
+.form-group input, .form-group select {
+  padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 0.95rem;
+}
+
+.form-actions { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+
+.btn {
+  padding: 12px 24px; font-size: 0.95rem; font-weight: bold;
+  border: none; border-radius: 5px; cursor: pointer; transition: background 0.2s;
+}
+.btn-primary { background: var(--tz-yellow); color: #000; }
+.btn-primary:hover { background: #e0b80d; }
+.btn-success { background: var(--tz-green); color: #fff; }
+.btn-success:hover { background: #169643; }
+.btn-secondary { background: var(--tz-blue); color: #fff; }
+.btn-secondary:hover { background: #0082b3; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.paper-wrapper {
+  max-width: 210mm; margin: 30px auto; box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.exam-paper {
+  background: #fff; color: #000;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt; line-height: 1.35;
+}
+
+/* A4 Page */
+.necta-page {
+  width: 210mm; min-height: 297mm; padding: 14mm 18mm;
+  box-sizing: border-box; page-break-after: always; position: relative;
+}
+
+.cover-row {
+  display: grid; grid-template-columns: 20% 60% 20%; align-items: center;
+  margin-bottom: 16px;
+}
+
+.cover-title {
+  text-align: center; font-weight: bold; font-size: 14pt; margin: 4px 0;
+}
+
+.cover-title.underlined { text-decoration: underline; }
+
+.code-time-row {
+  display: flex; justify-content: space-between;
+  border-top: 1.5px solid #000; border-bottom: 1.5px solid #000;
+  padding: 5px 0; font-weight: bold; margin-bottom: 12px;
+}
+
+.instructions h5 { text-align: center; margin-bottom: 8px; font-size: 11pt; }
+.instructions ol { padding-left: 22px; }
+.instructions li { margin-bottom: 5px; font-size: 10pt; }
+
+.assessor-table {
+  width: 100%; border-collapse: collapse; text-align: center; font-size: 9.5pt; margin-top: 15px;
+}
+.assessor-table th, .assessor-table td { border: 1px solid #000; padding: 4px; }
+
+.section-header {
+  text-align: center; font-weight: bold; margin: 15px 0 10px;
+  text-transform: uppercase; font-size: 11pt;
+}
+
+.section-sub { text-align: center; margin-bottom: 10px; font-size: 10pt; }
+
+.question-text { margin: 12px 0 5px; text-align: justify; }
+
+.subpart { margin-left: 20px; margin-top: 4px; text-align: justify; }
+
+.mcq-container { margin-bottom: 8px; }
+.mcq-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.mcq-q-text { width: 85%; }
+.mcq-ans-box { width: 40px; height: 28px; border: 1px solid #000; }
+.mcq-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 15px; margin-left: 20px; }
+
+.matching-lists { width: 100%; border-collapse: collapse; margin: 10px 0; border: 1px solid #000; }
+.matching-lists th, .matching-lists td { border: 0.5px solid #000; padding: 4px; }
+
+.dotted-line { border-bottom: 1px dotted #666; height: 20px; margin-bottom: 2px; }
+
+.page-footer {
+  position: absolute; bottom: 8mm; left: 0; right: 0;
+  text-align: center; font-size: 9pt;
+}
+
+.candidate-header {
+  text-align: right; font-weight: bold; font-size: 10pt; margin-bottom: 10px;
+}
+
+.subject-header {
+  position: absolute; top: 8mm; left: 18mm; font-size: 9pt;
+}
+
+.empty-state {
+  padding: 60px 20px; text-align: center; color: #777;
+}
+
+@media print {
+  body { background: #fff; }
+  .app-header, .config-section { display: none !important; }
+  .paper-wrapper { box-shadow: none; margin: 0; max-width: 100%; }
+  .necta-page { margin: 0; page-break-after: always; }
+}
+
+@media (max-width: 860px) {
+  .config-grid { grid-template-columns: 1fr; }
+  .span-2 { grid-column: span 1; }
+  .form-actions { flex-direction: column; }
+  .header-banner { flex-direction: column; text-align: center; }
+  .paper-wrapper { max-width: 100%; }
+  .necta-page { width: 100%; padding: 15px; }
+}

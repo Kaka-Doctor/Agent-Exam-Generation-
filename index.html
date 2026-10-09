@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Generator | Bible Knowledge & Divinity</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-banner">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCA2MCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyOCIgZmlsbD0iIzFCN0E1NSIvPjwvc3ZnPg==" alt="Logo" class="logo">
+        <div class="title-container">
+          <h1>Bible Knowledge & Divinity Exam Generator</h1>
+          <p>National Examinations Council of Tanzania & TIE Standard</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Configuration Form -->
+    <main class="config-section" id="configSection">
+      <form id="examConfigForm" class="config-grid">
+        <div class="form-group span-2">
+          <label for="schoolName">School / Council Name:</label>
+          <input type="text" id="schoolName" placeholder="e.g. ST. JOSEPH SECONDARY SCHOOL" value="TYPE YOUR SCHOOL NAME HERE">
+        </div>
+
+        <div class="form-group">
+          <label for="examType">Exam Type:</label>
+          <select id="examType">
+            <option value="TERMINAL/MOCK/PRE-NECTA">TERMINAL/MOCK/PRE-NECTA</option>
+            <option value="TERMINAL">TERMINAL</option>
+            <option value="MOCK">MOCK</option>
+            <option value="PRE-NECTA">PRE-NECTA</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="examDate">Exam Date (Month & Year):</label>
+          <input type="month" id="examDate" value="2026-11">
+        </div>
+
+        <div class="form-group">
+          <label for="classLevel">Class Level:</label>
+          <select id="classLevel">
+            <option value="">-- Select Level --</option>
+            <option value="form1">Form One (Bible Knowledge)</option>
+            <option value="form2">Form Two (Bible Knowledge)</option>
+            <option value="form5">Form Five (Divinity)</option>
+            <option value="form6">Form Six (Divinity)</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="topicGroup" style="display:none;">
+          <label for="topicSelect">Select Topic Scope:</label>
+          <select id="topicSelect"></select>
+        </div>
+
+        <div class="form-actions span-2">
+          <button type="button" id="btnGenerate" class="btn btn-primary" disabled>Generate Exam Paper</button>
+          <button type="button" id="btnDownloadPDF" class="btn btn-success" disabled>Download PDF</button>
+          <button type="button" id="btnRegenerate" class="btn btn-secondary" disabled>Regenerate Exam</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Exam Paper Preview -->
+    <main class="paper-wrapper" id="paperWrapper" style="display:none;">
+      <div id="examPaper" class="exam-paper"></div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
